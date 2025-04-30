@@ -16,15 +16,16 @@ class Report : AppCompatActivity() {
         val days = bundle?.getStringArray("daysArray")
         val grams = bundle?.getIntArray("gramsArray")
 
-
         var total = 0
 
-        if (days != null) {
-            for (i in days.indices) {
-                total = total+grams[i]
+        if (days != null && grams != null) {
+            for (i in 0..days.count() - 1) {
+                total = total + grams[i]
             }
+            reportTextView.text = "Total: $total grams fed this week."
+        } else {
+            reportTextView.text = "Error"
         }
 
-        reportTextView.text = "Total: $total grams fed this week."
     }
 }
