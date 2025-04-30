@@ -6,4 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".Report">
 
+    <TextView
+        android:id="@+id/reportTextView"
+        android:layout_width="283dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="178dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="139dp"
+        android:layout_marginEnd="142dp"
+        android:text="Dog Feeding Report:"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
