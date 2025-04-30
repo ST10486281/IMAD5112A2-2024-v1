@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val dayTextView = findViewById<TextView>(R.id.dayTextView)
+        val errorTextView = findViewById<TextView>(R.id.errorTextView)
         val inputEditText = findViewById<EditText>(R.id.editTextGrams)
         val nextButton = findViewById<Button>(R.id.nextButton)
 
@@ -32,12 +33,13 @@ class MainActivity : AppCompatActivity() {
             val value = input.toIntOrNull()
 
             if (value != null) {
+                errorTextView.text = "";
                 grams[currentIndex] = value
                 currentIndex++
 
                 if (currentIndex < 7) {
                     dayTextView.text = "Enter grams of food for: ${days[currentIndex]}"
-                    inputEditText.text.clear()
+                    inputEditText.text = null;
                 } else {
                     // All days done, go to report screen
                     val intent = Intent(this, Report::class.java)
@@ -46,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
             } else {
-                inputEditText.error = "Please enter a number"
+                errorTextView.text = "Please enter a number"
             }
         }
 
